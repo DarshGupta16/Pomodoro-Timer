@@ -12,6 +12,8 @@ const pomodoroCountDisplay = document.getElementById("pomodoroCount");
 
 // * Elements for program
 
+let signal = new Audio("./assets/Finish Signal.mp3");
+
 let pomodoroCount = 0;
 let time = 10;
 
@@ -43,15 +45,18 @@ startBtn.onclick = () => {
         (~~(i % 60) < 10 ? "0" : "") +
         ~~(i % 60);
     } else {
-      // TODO make alarm ring when time over
+      // * TODO make alarm ring when time over
       breakTime = !breakTime;
+      signal.play();
 
       if (breakTime == false) {
         whatTime.textContent = "Work";
         time = 10;
         pomodoroCount += 1;
         pomodoroCountDisplay.textContent = pomodoroCount;
+        alert("Time to work!");
       } else {
+        alert("Break time!");
         // TODO make this buttom say 'Start Break' if break time
         whatTime.textContent = "Break";
 
