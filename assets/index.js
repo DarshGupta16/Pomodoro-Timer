@@ -6,6 +6,7 @@ const cancelBtn = document.getElementById("cancelBtn");
 cancelBtn.style["display"] = "none";
 
 const whatTime = document.getElementById("whatTime");
+const whatTimeButton = document.getElementById("whatTimeButton");
 const timerDisplay = document.getElementById("timerDisplay");
 
 const pomodoroCountDisplay = document.getElementById("pomodoroCount");
@@ -45,20 +46,20 @@ startBtn.onclick = () => {
         (~~(i % 60) < 10 ? "0" : "") +
         ~~(i % 60);
     } else {
-      // * TODO make alarm ring when time over
       breakTime = !breakTime;
       signal.play();
 
       if (breakTime == false) {
         whatTime.textContent = "Work";
+        whatTimeButton.textContent = "Work";
         time = 10;
         pomodoroCount += 1;
         pomodoroCountDisplay.textContent = pomodoroCount;
         alert("Time to work!");
       } else {
         alert("Break time!");
-        // TODO make this buttom say 'Start Break' if break time
         whatTime.textContent = "Break";
+        whatTimeButton.textContent = "Break";
 
         // TODO make this 30 minutes if 5 pomodoros are over
         time = 5;
