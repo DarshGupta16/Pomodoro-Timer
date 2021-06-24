@@ -61,8 +61,11 @@ startBtn.onclick = () => {
         whatTime.textContent = "Break";
         whatTimeButton.textContent = "Break";
 
-        // TODO make this 30 minutes if 5 pomodoros are over
-        time = 5;
+        if (pomodoroCount % 5 == 0) {
+          time = 7;
+        } else {
+          time = 5;
+        }
       }
 
       startBtn.style["display"] = "initial";
