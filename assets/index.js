@@ -16,7 +16,7 @@ const pomodoroCountDisplay = document.getElementById("pomodoroCount");
 let signal = new Audio("./assets/Finish Signal.mp3");
 
 let pomodoroCount = 0;
-let time = 10;
+let time = 25 * 60;
 
 let breakTime = false;
 
@@ -62,9 +62,9 @@ startBtn.onclick = () => {
         whatTimeButton.textContent = "Break";
 
         if (pomodoroCount % 5 == 0) {
-          time = 7;
+          time = 30 * 60;
         } else {
-          time = 5;
+          time = 5 * 60;
         }
       }
 
